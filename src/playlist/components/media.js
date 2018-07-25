@@ -3,6 +3,17 @@ import PropTypes from 'prop-types';
 import './media.css';
 
 class Media extends Component{
+	state = {
+		title: this.props.title
+	}
+
+
+	handleClick = (event) =>{
+		this.setState({
+			title: 'Vikingos serie'
+		})
+	}
+
 	render(){
 		const styles = {
 			container:{ 
@@ -13,13 +24,13 @@ class Media extends Component{
 			}
 		}
 		return (
-			<div className="Media">
+			<div className="Media" onClick={this.handleClick}>
 				<img
 					src={this.props.image}
 					alt=""
 					className="image"
 				/>
-				<div className="titulo">{this.props.title}</div>
+				<div className="titulo">{this.state.title}</div>
 				<div className="overlay">
     				<div className="text">{this.props.text}</div>
   				</div>
@@ -28,9 +39,11 @@ class Media extends Component{
 	}
 }
 
+
+// https://reactjs.org/docs/typechecking-with-proptypes.html
 Media.propTypes ={
-	image: PropTypes.string,
-	title: PropTypes.string,
+	image: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
 	text: PropTypes.string
 }
 
