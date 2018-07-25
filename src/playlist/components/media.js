@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './media.css';
 
 class Media extends Component{
@@ -14,17 +15,23 @@ class Media extends Component{
 		return (
 			<div className="Media">
 				<img
-					src="./images/covers/vikings.jpg"
+					src={this.props.image}
 					alt=""
 					className="image"
 				/>
-				<div className="titulo">Vikings</div>
+				<div className="titulo">{this.props.title}</div>
 				<div className="overlay">
-    				<div className="text">Las aventuras de Ragnar Lothbrok, un vikingo agricultor, mientras asciende para convertirse en el rey de los vikingos.</div>
+    				<div className="text">{this.props.text}</div>
   				</div>
 			</div>
 			)
 	}
+}
+
+Media.propTypes ={
+	image: PropTypes.string,
+	title: PropTypes.string,
+	text: PropTypes.string
 }
 
 export default Media;
