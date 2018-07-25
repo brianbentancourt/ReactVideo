@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './media.css';
 
 class Media extends Component{
 	render(){
@@ -11,15 +12,16 @@ class Media extends Component{
 			}
 		}
 		return (
-			<div style={styles.container}>
+			<div className="Media">
 				<img
-					src=""
+					src="./images/covers/vikings.jpg"
 					alt=""
-					width={260}
-					height={160}
+					className="image"
 				/>
-				<h3>¿Por que aprender react?</h3>
-				<p>Brian Bentancourt</p>
+				<div className="titulo">Vikings</div>
+				<div className="overlay">
+    				<div className="text">Las aventuras de Ragnar Lothbrok, un vikingo agricultor, mientras asciende para convertirse en el rey de los vikingos.</div>
+  				</div>
 			</div>
 			)
 	}

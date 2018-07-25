@@ -1,0 +1,72 @@
+.Media{
+	cursor: pointer;
+	margin-right: 15px;
+	display: inline-block;
+	width: 260px;
+	height: 180px;
+	vertical-align: top;
+	-webkit-border-radius: 10px;
+	border-width: 2px;
+	border-color: white;
+	border-radius: 10px;
+	border-style: solid;
+	position: relative;
+}
+
+.Media img{
+	border-radius: 8px 8px 8px 8px;
+}
+
+.image {
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    width: 100% ;
+    text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.Media:hover{
+	border-color: #3F4BA3;
+}
+
+.Media:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  padding: 15px;
+  text-align: center;
+  text-shadow: 8px 8px 5px #000000;
+}
+
+.titulo{
+	height: 30px;
+	top: 5;
+  	bottom: 0;
+  	left: 0;
+  	right: 0;
+	color: red;
+  	font-size: 20px;
+  	position: absolute;
+  	text-align: center;
+  	background-color: black;
+  	opacity: 0.8;
+  	border-radius: 0px 0px 8px 8px;
+}
