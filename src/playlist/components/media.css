@@ -1,13 +1,13 @@
 .Media{
 	cursor: pointer;
-	margin-right: 15px;
+	margin: 3px;
 	display: inline-block;
 	width: 260px;
 	height: 180px;
 	vertical-align: top;
 	-webkit-border-radius: 10px;
 	border-width: 2px;
-	border-color: white;
+	border-color: #151515;
 	border-radius: 10px;
 	border-style: solid;
 	position: relative;
@@ -49,24 +49,64 @@
 
 .text {
   color: white;
-  font-size: 20px;
+  height: 150px;
+  overflow-y: scroll;
+  font-size: 18px;
   position: relative;
   padding: 15px;
   text-align: center;
   text-shadow: 8px 8px 5px #000000;
+  background-color: black;
+  opacity: 0.8;
+  border-radius: 8px 8px 8px 8px;
 }
 
 .titulo{
 	height: 30px;
 	top: 5;
-  	bottom: 0;
-  	left: 0;
-  	right: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 	color: red;
-  	font-size: 20px;
-  	position: absolute;
-  	text-align: center;
-  	background-color: black;
-  	opacity: 0.8;
-  	border-radius: 0px 0px 8px 8px;
+  font-size: 20px;
+  position: absolute;
+  text-align: center;
+  background-color: black;
+  opacity: 0.8;
+  border-radius: 0px 0px 8px 8px;
+}
+
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #787878;
+  border: 11px none #ffffff;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #535353;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #030303;
+}
+::-webkit-scrollbar-track {
+  background: #1b1b1b;
+  border: 9px none #ffffff;
+  border-radius: 11px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #1b1b1b;
+}
+::-webkit-scrollbar-track:active {
+  background: #1b1b1b;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
 }

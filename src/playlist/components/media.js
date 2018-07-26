@@ -26,11 +26,11 @@ class Media extends Component{
 		return (
 			<div className="Media" onClick={this.handleClick}>
 				<img
-					src={this.props.image}
+					src={this.props.cover}
 					alt=""
 					className="image"
 				/>
-				<div className="titulo">{this.state.title}</div>
+				<div className="titulo">{this.props.title}</div>
 				<div className="overlay">
     				<div className="text">{this.props.text}</div>
   				</div>
@@ -42,9 +42,10 @@ class Media extends Component{
 
 // https://reactjs.org/docs/typechecking-with-proptypes.html
 Media.propTypes ={
-	image: PropTypes.string.isRequired,
+	cover: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired,
-	text: PropTypes.string
+	text: PropTypes.string,
+	type: PropTypes.oneOf(['video','audio']),
 }
 
 export default Media;

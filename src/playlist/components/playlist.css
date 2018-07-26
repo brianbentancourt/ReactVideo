@@ -1,0 +1,13 @@
+.Playlist{
+	padding-top: 20px;
+}
+
+.Playlist h3{
+	color: black;
+	padding-left: 5px;
+}
+
+.Playlist p{
+	font-size: 14px;
+	padding-left: 7px;
+}
