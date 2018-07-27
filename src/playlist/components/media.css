@@ -3,7 +3,7 @@
 	margin: 3px;
 	display: inline-block;
 	width: 260px;
-	height: 180px;
+	height: 179px;
 	vertical-align: top;
 	-webkit-border-radius: 10px;
 	border-width: 2px;
@@ -49,7 +49,7 @@
 
 .text {
   color: white;
-  height: 150px;
+  height: 147px;
   overflow-y: scroll;
   font-size: 18px;
   position: relative;
