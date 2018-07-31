@@ -17,7 +17,7 @@ module.exports = (env) => {
   return {
 
     entry: {
-      "home": path.resolve(__dirname, 'srs/entries/home.js'),
+      "home": path.resolve(__dirname, 'src/entries/home.js'),
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
