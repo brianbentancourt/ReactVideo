@@ -11,12 +11,19 @@ import './search.css';
 // }
 
 
-const Search = ()=>(
-	<form action="" className="Search">
+const Search = (props)=>(
+	<form 
+		className="Search"
+		onSubmit={props.handleSubmit}
+	>
 		<input 
+			ref={props.setRef}
 			type="text" 
 			placeholder="Búsqueda..."
 			className="Search-input"
+			name="search"
+			onChange={props.handleChange}
+			value={props.value}
 		/>
 	</form>
 )
