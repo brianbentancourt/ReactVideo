@@ -1,7 +1,30 @@
-import React, { Component} from 'react';
+import React from 'react';
 import Media from './media.js'
 import './playlist.css';
 
+function Playlist(props){
+	return(
+			<div className="Playlist">
+				<h3> {props.title}</h3>
+				<p> {props.description}</p>
+					{
+						props.playlist.map((item)=> {
+							return(
+									<Media 
+										handleClick={props.handleOpenModal}
+										{...item} 
+										key={item.id} 
+									/>
+								) 
+						})
+					}
+				
+			</div>
+		)
+}
+
+
+/*
 class Playlist extends Component{
 	render(){
 		return(
@@ -10,7 +33,13 @@ class Playlist extends Component{
 				<p> {this.props.description}</p>
 					{
 						this.props.playlist.map((item)=> {
-							return <Media {...item} key={item.id} />
+							return(
+									<Media 
+										handleClick={this.props.handleOpenModal}
+										{...item} 
+										key={item.id} 
+									/>
+								) 
 						})
 					}
 				
@@ -18,5 +47,6 @@ class Playlist extends Component{
 			)
 	}
 }
+*/
 
 export default Playlist;
