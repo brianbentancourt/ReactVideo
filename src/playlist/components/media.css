@@ -2,8 +2,8 @@
 	cursor: pointer;
 	margin: 3px;
 	display: inline-block;
-	width: 260px;
-	height: 179px;
+	width: 270px;
+	height: 188px;
 	vertical-align: top;
 	-webkit-border-radius: 10px;
 	border-width: 2px;
@@ -11,6 +11,7 @@
 	border-radius: 10px;
 	border-style: solid;
 	position: relative;
+	background: black;
 }
 
 .Media img{
