@@ -8,6 +8,7 @@ import Controls from '../components/video-player-controls';
 import { formatTime } from'../../utilities/time';
 import ProgressBar from '../components/progress-bar';
 import Spinner from '../components/spinner';
+import Volume from '../components/volume';
 
 class VideoPlayer extends Component{
 	state={
@@ -16,7 +17,9 @@ class VideoPlayer extends Component{
 		durationStr: '00',
 		currentTime: 0,
 		currentTimeStr: '00',
-		loading: false
+		loading: false,
+		lastVolumeState: 1,
+		volume: 1
 	}
 
 	togglePlay = (event) =>{
@@ -62,6 +65,26 @@ class VideoPlayer extends Component{
 		})
 	}
 
+	handleVolumeChange = event=>{
+		this.video.volume = event.target.value;
+		this.setState({
+			lastVolumeState: this.video.volume,
+			volume: this.video.volume
+		})
+	}
+
+	handleVolumeClick = event =>{
+		if(this.video.volume > 0){
+			this.video.volume = 0;
+		}
+		else{
+			this.video.volume = this.state.lastVolumeState;
+		}
+		this.setState({
+			volume: this.video.volume
+		})
+	}
+
 	render(){
 		return(
 				<VideoPlayerLayout>
@@ -82,6 +105,11 @@ class VideoPlayer extends Component{
 							value={this.state.currentTime}
 							handleProgressChange={this.handleProgressChange}
 						/>
+						<Volume
+							handleVolumeChange={this.handleVolumeChange}
+							handleVolumeClick={this.handleVolumeClick}
+							volume={this.state.volume}
+						 />
 					</Controls>
 					<Spinner 
 						active={this.state.loading}
