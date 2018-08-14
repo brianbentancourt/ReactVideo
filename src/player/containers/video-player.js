@@ -6,9 +6,14 @@ import PlayPause from '../components/play-pause';
 import Timer from '../components/timer';
 import Controls from '../components/video-player-controls';
 import { formatTime } from'../../utilities/time';
+import { IsFullScreen, 
+		RequestFullScreen, 
+		ExitFullScreen 
+		} from'../../utilities/browser';
 import ProgressBar from '../components/progress-bar';
 import Spinner from '../components/spinner';
 import Volume from '../components/volume';
+import FullScreen from '../components/full-screen';
 
 class VideoPlayer extends Component{
 	state={
@@ -85,11 +90,25 @@ class VideoPlayer extends Component{
 		})
 	}
 
+	handleFullScreenClick = event =>{
+		if(!IsFullScreen()){
+			RequestFullScreen(this)
+		}else{
+			ExitFullScreen()
+		}
+	}
+
+	setRef= element =>{
+		this.player = element
+	}
+
 	render(){
 		return(
-				<VideoPlayerLayout>
+				<VideoPlayerLayout
+					setRef={this.setRef}
+				>
 					<Title
-						title="Titulo del video"
+						title={this.props.title}
 					/>
 					<Controls>
 						<PlayPause 
@@ -110,6 +129,9 @@ class VideoPlayer extends Component{
 							handleVolumeClick={this.handleVolumeClick}
 							volume={this.state.volume}
 						 />
+						 <FullScreen 
+						 	handleFullScreenClick={this.handleFullScreenClick}
+						 />
 					</Controls>
 					<Spinner 
 						active={this.state.loading}
@@ -121,7 +143,7 @@ class VideoPlayer extends Component{
 						handleTimeUpdate={this.handleTimeUpdate}
 						handleSeeking={this.handleSeeking}
 						handleSeeked={this.handleSeeked}
-						src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+						src={this.props.src}
 					/>
 				</VideoPlayerLayout>
 			)
