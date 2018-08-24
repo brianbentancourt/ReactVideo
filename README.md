@@ -1,4 +1,5 @@
 # ReactVideo
 Sitio de vídeos online desarrollada con React
 
-npm run build:dev
+corriendo en: https://reactvideo2018.herokuapp.com/
+
